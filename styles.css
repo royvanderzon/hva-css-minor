@@ -15,6 +15,10 @@ body {
     width: 100%;
 }
 
+p {
+    max-width: 35em;
+}
+
 h1,
 h2,
 h3,
@@ -22,6 +26,15 @@ h4,
 h5,
 h6 {
     color: #ee6e73;
+}
+
+hr {
+    opacity: .2;
+}
+
+img {
+    max-width: 100%;
+    display: block;
 }
 
 body > header {
@@ -61,11 +74,13 @@ body > main > .inner {
     display: block;
     position: relative;
     padding: 2rem;
+    padding-top: 3rem;
     margin: 0 auto;
     margin-top: -40px;
     background-color: #fff;
     max-width: 1000px;
     margin-top: 160px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
 }
 
 body > .nav_wrapper > nav {
@@ -77,7 +92,7 @@ body > .nav_wrapper > nav {
     width: 300px;
     max-width: 30vw;
     background-color: #fff;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
     z-index: 999;
     transition: 200ms all ease-in;
 }
@@ -139,6 +154,225 @@ body > .nav_wrapper > label {
     display: none;
 }
 
+.login,
+.chat {
+    width: 30em;
+    margin: 0 auto;
+    max-width: 100%;
+    /*margin-bottom: 2rem;*/
+    /*padding-bottom: 2rem;*/
+}
+
+.login input {
+    margin-top: .3em;
+    margin-bottom: .7em;
+}
+
+.login button:last-child {
+    margin-top: 1em;
+}
+
+.chat ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat ol li {
+    width: 80%;
+    min-width: 100px;
+    display: block;
+    padding: .5rem 2rem;
+    border-radius: .2em;
+    line-height: .8em;
+    margin-bottom: 10px;
+    transition: .2s all ease-in;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0), 0 1px 5px 0 rgba(0, 0, 0, 0.), 0 3px 1px -2px rgba(0, 0, 0, 0);
+    cursor: pointer;
+}
+
+.chat ol li:hover {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+.chat ol li footer {
+    font-size: 13px;
+    line-height: 6px;
+}
+
+.chat ol li footer time {
+    font-style: italic;
+}
+
+.chat ol li.send footer p:last-child {
+    font-weight: bold;
+}
+
+.chat ol li.send {
+    background-color: #4db6ac;
+    text-align: right;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    align-self: flex-end;
+}
+
+.chat ol li.got {
+    background-color: #eeeeee;
+    text-align: left;
+    align-self: flex-start;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.chat form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.chat form > label {
+    flex-grow: 1;
+    display: none;
+}
+
+.chat form > textarea {
+    flex-grow: 6;
+    margin-right: 15px;
+}
+
+.chat form > button {
+    flex-grow: 3;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    text-decoration: none;
+    color: #fff;
+    background-color: #26a69a;
+    text-align: center;
+    letter-spacing: .5px;
+    transition: .2s ease-out;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    vertical-align: middle;
+    z-index: 1;
+    transition: .3s ease-out;
+    text-transform: uppercase;
+    outline: 0;
+    border-width: 0;
+    padding: 12px 24px;
+    border-radius: 2px;
+    font-size: 15px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #00838f;
+}
+
+textarea,
+input {
+    border-radius: 2px;
+    border: 1px solid #ddd;
+}
+
+input {
+    transition: ease-in-out, all .35s ease-in-out;
+    padding: 12px;
+}
+
+input:focus {
+    /*background-color: #00838f;*/
+    outline: -webkit-focus-ring-color auto 5px;
+    outline-color: rgba(0, 131, 143, 0.5);
+}
+
+input:-webkit-autofill {
+    /*background-color: #FAFFBD !important;*/
+}
+
+article time {
+    font-style: italic;
+}
+
+article footer {
+    font-size: 13px;
+}
+
+
+/*idea from https://css-tricks.com/html5-progress-element/*/
+
+progress[value] {
+    appearance: none;
+    border: none;
+    width: 100%;
+    height: 20px;
+    background-color: whiteSmoke;
+    border-radius: 3px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .5) inset;
+    color: royalblue;
+    position: relative;
+    margin: 0 0 1.5em;
+}
+
+progress[value]::-webkit-progress-bar {
+    background-color: whiteSmoke;
+    border-radius: 3px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .5) inset;
+}
+
+progress[value]::-webkit-progress-value {
+    position: relative;
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+    border-radius: 3px;
+    /*background-color: red;*/
+    background-image: url('https://media.giphy.com/media/3JpzY3LDgwG88/giphy.gif');
+    /*background-image: url('https://media.giphy.com/media/rDP8so9lJmsMM/giphy.gif');*/
+    background-size: 300px 300px;
+    /* Let's animate this */
+    animation: animate-stripes 5s linear infinite;
+}
+
+progress[value]::-webkit-progress-value::before {
+    content: ' ';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+}
+
+body > main > .inner:target{
+    background-color: red;
+}
+
+@keyframes animate-stripes {
+    100% {
+        background-position: -100px 0;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+#article_img article {
+    background-color: #fefefe;
+    padding: 1em;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+}
+
 @media screen and (max-width: 1350px) {
     body > main article {
         display: flex;
@@ -189,5 +423,33 @@ body > .nav_wrapper > label {
 @media screen and (max-width: 767px) {
     body > main > .inner {
         padding: 1rem;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    section > article:first-child {
+        display: block;
+        position: relative;
+    }
+    section > article:first-child .article_inner {
+        width: 60%;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        /* left: 0; */
+        right: 0;
+        height: 100%;
+        flex-direction: column;
+        /* margin: 0 auto; */
+        background-color: rgba(33, 33, 33, 0.6);
+        color: #fff;
+        text-align: center;
+        padding-bottom: 50px;
+    }
+    section > article:first-child img {
+        width: 100%;
+        height: auto;
     }
 }

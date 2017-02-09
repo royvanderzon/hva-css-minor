@@ -1,3 +1,7 @@
-# Components
+# Web-App-from-Scratch
+Minor project
 
-Rating example makes use of Emoji from: http://emojione.com
+Project CSS TO THE RESCUE
+
+##Wishlist
+* opdracht 5 http://www.widesi-webdesign.nl/minor/opdracht%205%20-%20spa/
