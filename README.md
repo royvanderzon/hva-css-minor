@@ -1,4 +1,5 @@
-# Web-App-from-Scratch
+# Project CSS TO THE RESCUE
+## Living style guide
 Minor project
 
 Project CSS TO THE RESCUE
