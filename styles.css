@@ -13,6 +13,9 @@ body {
     margin: 0;
     height: 100%;
     width: 100%;
+    background: hsl(20, 40%, 90%);
+    background-image: linear-gradient(90deg, #fb3 10px, transparent 0), linear-gradient(90deg, #ab4 20px, transparent 0), linear-gradient(90deg, #655 20px, transparent 0);
+    background-size: 80px 100%, 60px 100%, 40px 100%;
 }
 
 p {
@@ -99,7 +102,7 @@ body > .nav_wrapper > nav {
 
 body > .nav_wrapper > nav > h1 {
     margin: 0;
-    padding: 25px 15px;
+    padding: 1.563em 0.938em;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
@@ -113,7 +116,7 @@ body > .nav_wrapper > nav > ul ul {
 
 body > .nav_wrapper > nav > ul li a {
     display: block;
-    padding: 15px 20px;
+    padding: 0.938em 20px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     color: #101010;
     text-decoration: none;
@@ -177,13 +180,17 @@ body > .nav_wrapper > label {
     display: flex;
     flex-direction: column;
 }
-form.login:invalid button[type=submit]{
+
+form.login:invalid button[type=submit] {
     opacity: 0.5;
     background-color: #26a69a;
     cursor: not-allowed;
 }
-form.login input[type=email]:valid,form.login input[type=password]:valid{
-    background-color: rgba(0,255,0,0.5);;
+
+form.login input[type=email]:valid,
+form.login input[type=password]:valid {
+    background-color: rgba(0, 255, 0, 0.5);
+    ;
 }
 
 .chat ol li {
@@ -193,7 +200,7 @@ form.login input[type=email]:valid,form.login input[type=password]:valid{
     padding: .5rem 2rem;
     border-radius: .2em;
     line-height: .8em;
-    margin-bottom: 10px;
+    margin-bottom: 0.625em;
     transition: .2s all ease-in;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0), 0 1px 5px 0 rgba(0, 0, 0, 0.), 0 3px 1px -2px rgba(0, 0, 0, 0);
     cursor: pointer;
@@ -204,8 +211,8 @@ form.login input[type=email]:valid,form.login input[type=password]:valid{
 }
 
 .chat ol li footer {
-    font-size: 13px;
-    line-height: 6px;
+    font-size: .8em;
+    line-height: 1;
 }
 
 .chat ol li footer time {
@@ -219,9 +226,9 @@ form.login input[type=email]:valid,form.login input[type=password]:valid{
 .chat ol li.send {
     background-color: #4db6ac;
     text-align: right;
-    border-top-right-radius: 25px;
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
+    border-top-right-radius: 1.563em;
+    border-top-left-radius: 1.563em;
+    border-bottom-left-radius: 1.563em;
     align-self: flex-end;
 }
 
@@ -229,9 +236,9 @@ form.login input[type=email]:valid,form.login input[type=password]:valid{
     background-color: #eeeeee;
     text-align: left;
     align-self: flex-start;
-    border-top-right-radius: 25px;
-    border-top-left-radius: 25px;
-    border-bottom-right-radius: 25px;
+    border-top-right-radius: 1.563em;
+    border-top-left-radius: 1.563em;
+    border-bottom-right-radius: 1.563em;
 }
 
 .chat form {
@@ -247,7 +254,7 @@ form.login input[type=email]:valid,form.login input[type=password]:valid{
 
 .chat form > textarea {
     flex-grow: 6;
-    margin-right: 15px;
+    margin-right: 0.938em;
 }
 
 .chat form > button {
@@ -259,12 +266,84 @@ form.login input[type=email]:valid,form.login input[type=password]:valid{
     flex-direction: column;
 }
 
+section.rating fieldset {
+    max-width: 500px;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    border: none;
+}
+
+section.rating fieldset legend {
+    display: block;
+    width: 100%;
+    text-align: left;
+    color: #ee6e73;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(230, 230, 230, .8);
+    padding-bottom: .8em;
+    margin-bottom: .0em;
+}
+
+section.rating input {
+    display: none;
+}
+
+section.rating label {
+    float: left;
+    width: 25%;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+section.rating label {
+    opacity: 0.5;
+    transition: 200ms all ease-in;
+    font-size: .8em;
+    color: #333;
+    font-weight: bold;
+    padding: 1em;
+}
+
+section.rating label:hover {
+    animation: bounce .2s linear forwards;
+}
+
+section.rating input:checked + label {
+    opacity: 1;
+    animation: bounceReverse .2s linear forwards;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+    15% {
+        transform: scale(.85);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes bounceReverse {
+    0% {
+        transform: scale(1);
+    }
+    15% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 button {
     text-decoration: none;
     color: #fff;
     background-color: #26a69a;
     text-align: center;
-    letter-spacing: .5px;
     transition: .2s ease-out;
     cursor: pointer;
     position: relative;
@@ -278,9 +357,9 @@ button {
     text-transform: uppercase;
     outline: 0;
     border-width: 0;
-    padding: 12px 24px;
-    border-radius: 2px;
-    font-size: 15px;
+    padding: 0.750em 1.500em;
+    border-radius: 0.125em;
+    font-size: 0.938em;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
 
@@ -290,13 +369,16 @@ button:hover {
 
 textarea,
 input {
-    border-radius: 2px;
+    border-radius: 0.125em;
     border: 1px solid #ddd;
 }
 
 input {
     transition: ease-in-out, all .35s ease-in-out;
-    padding: 12px;
+    padding: 0.750em;
+}
+input[type=text],input[type=email],input[type=number],input[type=password]{
+    font-size: 1.3em;
 }
 
 input:focus {
@@ -309,12 +391,79 @@ input:-webkit-autofill {
     /*background-color: #FAFFBD !important;*/
 }
 
+input[type="checkbox"] {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+input[type="checkbox"] + label::before {
+    content: '\2713';
+    color: silver;
+    display: inline-block;
+    vertical-align: .2em;
+    width: 1em;
+    height: 1em;
+    margin-right: .2em;
+    border-radius: .2em;
+    background: silver;
+    text-indent: .15em;
+    line-height: 1;
+    font-weight: bold;
+    border: 1px solid rgba(51,51,51,.5);
+    transform: .2s all ease-in;
+}
+
+input[type="checkbox"]:checked + label::before {
+    content: '\2713';
+    color: #333;
+    /*content: '\00d7';*/
+    background: rgba(0,255,0,.5);
+}
+
 article time {
     font-style: italic;
 }
 
 article footer {
-    font-size: 13px;
+    font-size: .8em;
+}
+.inner article{
+    position: relative;
+    transform: scale(1);
+    transition: .2s all ease-in;
+}
+.inner article:hover{
+    transform: scale(1.05);
+}
+.inner article footer a::after{
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+progress + ol {
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 1em;
+    padding-left: 2em;
+    box-shadow: inset 0px 0px 2px 1px rgba(0,0,0,0.3);
+}
+
+progress + ol li{
+    padding-top: .5em;
+    padding-bottom: .25em;
+    margin-bottom: .25em;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    transition: .2s all ease-in;
+    border-left: 0em solid rgba(0,255,0,.6);
+    padding-left: 1em;
+}
+progress + ol li:hover,progress + ol li:focus{
+    /*transform: translateX(2%);*/
+    border-left: 1em solid rgba(0,255,0,.5);
 }
 
 
@@ -324,9 +473,9 @@ progress[value] {
     appearance: none;
     border: none;
     width: 100%;
-    height: 20px;
+    height: 1.250em;
     background-color: whiteSmoke;
-    border-radius: 3px;
+    border-radius: 0.125em;
     box-shadow: 0 2px 3px rgba(0, 0, 0, .5) inset;
     color: royalblue;
     position: relative;
@@ -335,31 +484,28 @@ progress[value] {
 
 progress[value]::-webkit-progress-bar {
     background-color: whiteSmoke;
-    border-radius: 3px;
+    border-radius: 0.125em;
     box-shadow: 0 2px 3px rgba(0, 0, 0, .5) inset;
 }
 
 progress[value]::-webkit-progress-value {
     position: relative;
     background-size: 35px 20px, 100% 100%, 100% 100%;
-    border-radius: 3px;
-    /*background-color: red;*/
+    border-radius: 0.125em;
     background-image: url('https://media.giphy.com/media/3JpzY3LDgwG88/giphy.gif');
-    /*background-image: url('https://media.giphy.com/media/rDP8so9lJmsMM/giphy.gif');*/
     background-size: 300px 300px;
-    /* Let's animate this */
     animation: animate-stripes 5s linear infinite;
 }
 
 progress[value]::-webkit-progress-value::before {
     content: ' ';
     display: block;
-    width: 10px;
-    height: 10px;
+    width: 0.625em;
+    height: 0.625em;
     background-color: #000;
 }
 
-body > main > .inner:target{
+body > main > .inner:target {
     background-color: red;
 }
 
@@ -406,22 +552,22 @@ body > main > .inner:target{
         user-select: none;
         cursor: pointer;
         position: fixed;
-        top: -10px;
-        right: 25px;
+        top: 0em;
+        right: 1.563em;
         z-index: 1000;
-        font-size: 40px;
+        font-size: 2em;
         display: block;
         transform: scale(1);
     }
     body > .nav_wrapper > label::before {
         content: '__';
         position: absolute;
-        top: -10px;
+        top: -0.325em;
     }
     body > .nav_wrapper > label::after {
         content: '__';
         position: absolute;
-        top: 10px;
+        top: 0.325em;
         left: 0;
     }
 }
@@ -452,7 +598,7 @@ body > main > .inner:target{
         background-color: rgba(33, 33, 33, 0.6);
         color: #fff;
         text-align: center;
-        padding-bottom: 50px;
+        padding-bottom: 3.125em;
     }
     section > article:first-child img {
         width: 100%;
