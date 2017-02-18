@@ -159,8 +159,6 @@ body > .nav_wrapper > label {
     width: 30em;
     margin: 0 auto;
     max-width: 100%;
-    /*margin-bottom: 2rem;*/
-    /*padding-bottom: 2rem;*/
 }
 
 .login input {
@@ -179,10 +177,18 @@ body > .nav_wrapper > label {
     display: flex;
     flex-direction: column;
 }
+form.login:invalid button[type=submit]{
+    opacity: 0.5;
+    background-color: #26a69a;
+    cursor: not-allowed;
+}
+form.login input[type=email]:valid,form.login input[type=password]:valid{
+    background-color: rgba(0,255,0,0.5);;
+}
 
 .chat ol li {
     width: 80%;
-    min-width: 100px;
+    min-width: 6.250em;
     display: block;
     padding: .5rem 2rem;
     border-radius: .2em;
@@ -359,7 +365,7 @@ body > main > .inner:target{
 
 @keyframes animate-stripes {
     100% {
-        background-position: -100px 0;
+        background-position: -6.250em 0;
     }
 }
 
